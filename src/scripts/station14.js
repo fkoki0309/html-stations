@@ -1,3 +1,5 @@
+const { first } = require("fp-ts/lib/Semigroup");
+
 function getData() {
     // これから作ろうとしているもので、JavaScriptでフルネームを生成する必要が出てきました。
     // ただ現状持っている情報では、名前と苗字をそれぞれのみしかありません。
@@ -13,6 +15,8 @@ function buildFullName(data) {
     // Station14の問題はこちらです。想定する答えをここを書いてください。
     // 氏名がわかるようにしつつ、半角スペースで繋いでください。
     // またtest配列のそれぞれのオブジェクトに対して、full_nameのプロパティが追加されるように実装すること
+    const full_name = data.family_name + ' ' + data.first_name;
+    return data = { ...data, full_name: full_name };
 }
 
 // 出力が想定される答え
